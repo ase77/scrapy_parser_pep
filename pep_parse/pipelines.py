@@ -2,7 +2,7 @@ import datetime as dt
 from pathlib import Path
 
 DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'
-BASE_DIR = Path(__file__).parent.parent
+BASE_DIR = Path(__file__).parent
 RESULTS_DIR = BASE_DIR / 'results'
 
 
