@@ -1,5 +1,4 @@
 import datetime as dt
-from pathlib import Path
 
 from pep_parse.settings import DATETIME_FORMAT, BASE_DIR, RESULT_DIR
 
