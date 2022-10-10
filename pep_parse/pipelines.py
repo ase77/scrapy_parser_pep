@@ -1,9 +1,7 @@
 import datetime as dt
 from pathlib import Path
 
-DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'
-BASE_DIR = Path(__file__).parent
-RESULTS_DIR = BASE_DIR / 'results'
+from pep_parse.settings import DATETIME_FORMAT, BASE_DIR, RESULT_DIR
 
 
 class PepParsePipeline:
@@ -19,10 +17,11 @@ class PepParsePipeline:
         return item
 
     def close_spider(self, spider):
+        results_dir = BASE_DIR / RESULT_DIR
         now = dt.datetime.now()
         now_format = now.strftime(DATETIME_FORMAT)
         filename = f'status_summary_{now_format}.csv'
-        file_path = RESULTS_DIR / filename
+        file_path = results_dir / filename
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write('Статус,Количество\n')
             total = 0

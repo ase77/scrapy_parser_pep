@@ -1,11 +1,5 @@
-# Scrapy settings for pep_parse project
-#
-# For simplicity, this file contains only settings considered important or
-# commonly used. You can find more settings consulting the documentation:
-#
-#     https://docs.scrapy.org/en/latest/topics/settings.html
-#     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+from pathlib import Path
+
 
 BOT_NAME = 'pep_parse'
 
@@ -87,6 +81,10 @@ ROBOTSTXT_OBEY = True
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'
+BASE_DIR = Path(__file__).parent.parent
+RESULT_DIR = 'results'
 
 FEEDS = {
     'results/pep_%(time)s.csv': {
